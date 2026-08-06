@@ -1,0 +1,46 @@
+:root{
+
+    /* ========= CORES ========= */
+
+    --color-primary: #3B82F6;
+    --color-primary-light: #60A5FA;
+
+    --color-background: #0D1117;
+    --color-surface: #161B22;
+    --color-surface-hover: #21262D;
+
+    --color-white: #FFFFFF;
+    --color-text: #C9D1D9;
+    --color-text-light: #8B949E;
+
+    --color-border: #30363D;
+
+    /* ========= FONTES ========= */
+
+    --font-family: "Inter", sans-serif;
+
+    --font-title: 3.8rem;
+    --font-subtitle: 2rem;
+    --font-text: 1rem;
+    --font-small: .9rem;
+
+    /* ========= ESPAÇAMENTOS ========= */
+
+    --section-padding: 120px;
+
+    --container-width: 1200px;
+
+    /* ========= ANIMAÇÕES ========= */
+
+    --transition: .3s ease;
+
+    /* ========= BORDAS ========= */
+
+    --radius: 12px;
+
+    /* ========= SOMBRAS ========= */
+
+    --shadow:
+    0 10px 30px rgba(0,0,0,.35);
+
+}
