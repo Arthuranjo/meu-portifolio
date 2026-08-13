@@ -469,9 +469,9 @@ section{
 
     grid-template-columns: repeat(2,1fr);
 
-    gap: 35px;
+    gap: 28px;
 
-    margin-top: 80px;
+    margin-top: 65px;
 
 }
 
@@ -483,7 +483,7 @@ section{
 
     border-radius: var(--radius);
 
-    padding: 35px;
+    padding: 15px;
 
     transition: .35s ease;
 
@@ -503,7 +503,7 @@ section{
 
     color: var(--color-white);
 
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
     font-size: 1.5rem;
 
@@ -515,7 +515,7 @@ section{
 
     grid-template-columns: repeat(2,1fr);
 
-    gap: 18px;
+    gap: 8px;
 
 }
 
@@ -525,11 +525,13 @@ section{
 
     display:flex;
 
-    justify-content:space-between;
+    justify-content:flex-start;
 
     align-items:center;
 
-    padding:16px;
+    gap: 10px;
+
+    padding:12px;
 
     border-radius:12px;
 
@@ -651,13 +653,31 @@ section{
 
 
 
+
+
+.project-section{
+
+    margin-bottom: 30px;
+
+}
+
+.project-section h4{
+
+    color: var(--color-white);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 18px;
+
+}
+
 .projects-container{
 
-    display: flex;
+    display: grid;
 
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 120px;
+    gap: 30px;
 
     margin-top: 80px;
 
@@ -665,35 +685,13 @@ section{
 
 .project-card{
 
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    align-items: center;
-
-    gap: 70px;
-
-}
-
-.project-card.reverse{
-
-    direction: rtl;
-
-}
-
-.project-card.reverse > *{
-
-    direction: ltr;
-
-}
-
-.browser{
+    width: 100%;
 
     background: var(--color-surface);
 
     border: 1px solid var(--color-border);
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     overflow: hidden;
 
@@ -703,9 +701,38 @@ section{
 
 }
 
+.project-card:hover{
+
+    transform: translateY(-6px);
+
+    border-color: var(--color-primary);
+
+}
+
+
+/* =========================
+   IMAGEM DO PROJETO
+========================= */
+
+.project-card .browser{
+
+    width: 100%;
+
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: none;
+
+    overflow: hidden;
+
+    background: #0f172a;
+
+}
+
 .browser:hover{
 
-    transform: translateY(-10px);
+    transform: none;
 
 }
 
@@ -717,7 +744,7 @@ section{
 
     gap: 8px;
 
-    padding: 14px 20px;
+    padding: 12px 18px;
 
     background: #0f172a;
 
@@ -727,9 +754,9 @@ section{
 
 .browser-header span{
 
-    width: 13px;
+    width: 12px;
 
-    height: 13px;
+    height: 12px;
 
     border-radius: 50%;
 
@@ -757,11 +784,15 @@ section{
 
     overflow: hidden;
 
+    width: 100%;
+
 }
 
 .project-image img{
 
     width: 100%;
+
+    height: auto;
 
     display: block;
 
@@ -771,9 +802,14 @@ section{
 
 .browser:hover img{
 
-    transform: scale(1.04);
+    transform: scale(1.02);
 
 }
+
+
+/* =========================
+   INFORMAÇÕES
+========================= */
 
 .project-info{
 
@@ -781,7 +817,14 @@ section{
 
     flex-direction: column;
 
+    padding: 22px 26px 26px;
+
 }
+
+
+/* =========================
+   TOPO
+========================= */
 
 .project-top{
 
@@ -791,7 +834,9 @@ section{
 
     align-items: center;
 
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+
+    gap: 15px;
 
 }
 
@@ -801,7 +846,7 @@ section{
 
     color: var(--color-primary);
 
-    padding: 8px 18px;
+    padding: 7px 16px;
 
     border-radius: 40px;
 
@@ -815,7 +860,7 @@ section{
 
     color: white;
 
-    padding: 8px 18px;
+    padding: 7px 16px;
 
     border-radius: 40px;
 
@@ -823,15 +868,25 @@ section{
 
 }
 
+
+/* =========================
+   TÍTULO
+========================= */
+
 .project-info h3{
 
     font-size: 2rem;
 
     color: var(--color-white);
 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 
 }
+
+
+/* =========================
+   DESCRIÇÃO
+========================= */
 
 .project-description{
 
@@ -839,9 +894,14 @@ section{
 
     color: var(--color-text-light);
 
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 
 }
+
+
+/* =========================
+   TECNOLOGIAS
+========================= */
 
 .project-technologies{
 
@@ -849,15 +909,15 @@ section{
 
     flex-wrap: wrap;
 
-    gap: 12px;
+    gap: 10px;
 
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 
 }
 
 .project-technologies span{
 
-    padding: 10px 18px;
+    padding: 8px 15px;
 
     border-radius: 50px;
 
@@ -877,15 +937,51 @@ section{
 
 }
 
+
+/* =========================
+   CONTEÚDO EXPANDIDO
+========================= */
+
+.project-extra{
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+
+        max-height .6s ease,
+        opacity .35s ease,
+        margin-top .4s ease;
+
+}
+
+.project-card.expanded .project-extra{
+
+    max-height: 1000px;
+
+    opacity: 1;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================
+   FUNCIONALIDADES
+========================= */
+
 .project-features{
 
     display: grid;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 15px;
+    gap: 12px;
 
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 
 }
 
@@ -905,15 +1001,20 @@ section{
 
 }
 
+
+/* =========================
+   MÉTRICAS
+========================= */
+
 .project-metrics{
 
     display: grid;
 
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3, 1fr);
 
-    gap: 18px;
+    gap: 15px;
 
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 
 }
 
@@ -923,7 +1024,7 @@ section{
 
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
 }
 
@@ -941,54 +1042,370 @@ section{
 
 }
 
+
+/* =========================
+   BOTÕES
+========================= */
+
 .project-buttons{
 
     display: flex;
 
-    gap: 20px;
+    gap: 15px;
 
     flex-wrap: wrap;
 
 }
 
-.browser{
 
-    position: relative;
+/* =========================
+   BOTÃO VER MAIS
+========================= */
+
+.project-toggle{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 13px 20px;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 10px;
+
+    background: transparent;
+
+    color: var(--color-text);
+
+    cursor: pointer;
+
+    font-size: .95rem;
+
+    transition: .3s ease;
 
 }
 
-.browser::before{
+.project-toggle:hover{
+
+    background: var(--color-primary);
+
+    border-color: var(--color-primary);
+
+    color: white;
+
+}
+
+.project-toggle i{
+
+    transition: .3s ease;
+
+}
+
+.project-card.expanded .project-toggle i{
+
+    transform: rotate(180deg);
+
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+
+
+@media (max-width: 768px){
+
+    .project-info{
+
+        padding: 25px;
+
+    }
+
+    .project-info h3{
+
+        font-size: 1.6rem;
+
+    }
+
+    .project-features{
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .project-metrics{
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+.experience {
+    padding: 120px 0;
+}
+
+.timeline {
+    position: relative;
+
+    max-width: 900px;
+
+    margin: 90px auto 0;
+
+    padding: 20px 0;
+}
+
+.timeline::before {
 
     content: "";
 
     position: absolute;
 
     top: 0;
+    bottom: 0;
 
-    left: -120%;
+    left: 50%;
 
-    width: 80%;
+    width: 2px;
 
-    height: 100%;
+    background: var(--color-border);
 
-    background: linear-gradient(
-
-        120deg,
-
-        transparent,
-
-        rgba(255,255,255,.15),
-
-        transparent
-
-    );
-
-    transition: .8s;
+    transform: translateX(-50%);
 
 }
 
-.browser:hover::before{
+.timeline-item {
 
-    left: 130%;
+    position: relative;
+
+    width: 50%;
+
+    padding: 0 50px 80px;
+
+}
+
+.timeline-item:nth-child(even) {
+
+    margin-left: 50%;
+
+}
+
+.timeline-dot {
+
+    position: absolute;
+
+    top: 10px;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background: var(--color-background);
+
+    border: 3px solid var(--color-primary);
+
+    z-index: 2;
+
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+
+    right: -8px;
+
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+
+    left: -8px;
+
+}
+
+.timeline-content {
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+    transition: .35s ease;
+
+}
+
+.timeline-content:hover {
+
+    transform: translateY(-8px);
+
+    border-color: var(--color-primary);
+
+    box-shadow: var(--shadow);
+
+}
+
+.timeline-date {
+
+    display: inline-block;
+
+    color: var(--color-primary);
+
+    font-weight: 700;
+
+    font-size: .95rem;
+
+    margin-bottom: 10px;
+
+}
+
+.timeline-type {
+
+    display: block;
+
+    color: var(--color-text-light);
+
+    font-size: .85rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 15px;
+
+}
+
+.timeline-content h3 {
+
+    color: var(--color-white);
+
+    font-size: 1.4rem;
+
+    margin-bottom: 8px;
+
+}
+
+.timeline-content h4 {
+
+    color: var(--color-primary-light);
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    margin-bottom: 18px;
+
+}
+
+.timeline-content p {
+
+    color: var(--color-text-light);
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+
+}
+
+.timeline-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+.timeline-tags span {
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(59, 130, 246, .1);
+
+    color: var(--color-primary-light);
+
+    font-size: .8rem;
+
+}
+
+.timeline-item.current .timeline-dot {
+
+    background: var(--color-primary);
+
+    box-shadow: 0 0 0 6px rgba(59, 130, 246, .15);
+
+}
+
+.timeline-item.current .timeline-content {
+
+    border-color: var(--color-primary);
+
+}
+
+@media (max-width: 768px) {
+
+    .timeline {
+
+        margin-left: 20px;
+
+    }
+
+    .timeline::before {
+
+        left: 0;
+
+        transform: none;
+
+    }
+
+    .timeline-item {
+
+        width: 100%;
+
+        margin-left: 0 !important;
+
+        padding:
+
+            0
+            0
+            60px
+            40px;
+
+    }
+
+    .timeline-item:nth-child(even) {
+
+        margin-left: 0;
+
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+
+        left: -8px;
+
+        right: auto;
+
+    }
+
+    .timeline-content {
+
+        padding: 25px;
+
+    }
 
 }

@@ -129,7 +129,128 @@ const projects = [
             "agenda.png",
             "pagamentos.png"
         ]
-    }
+    },
+
+    {
+        id: 3,
+
+        title: "Controle de Gastos",
+
+        category: "Mobile",
+
+        status: "Concluído",
+
+        featured: true,
+
+        year: "2026",
+
+        duration: "Em desenvolvimento",
+
+        team: "Projeto Pessoal",
+
+        role: "Mobile Developer",
+
+        image: "assets/img/projects/cosmica.png",
+
+        description:
+            "Aplicativo mobile desenvolvido para gerenciamento de gastos pessoais, permitindo cadastrar, visualizar e excluir despesas, selecionar categorias e datas, além de acompanhar automaticamente o total de gastos.",
+
+        technologies: [
+            "React Native",
+            "Expo",
+            "JavaScript",
+            "SQLite",
+            "AsyncStorage",
+            "React Native Calendars"
+        ],
+
+        features: [
+            "Cadastro de Gastos",
+            "Seleção de Categorias",
+            "Calendário para Datas",
+            "Listagem de Despesas",
+            "Exclusão de Gastos",
+            "Totalizador Automático"
+        ],
+
+        metrics: {
+            modules: 3,
+            technologies: 6,
+            users: [
+                "Usuário"
+            ]
+        },
+
+        github: "https://github.com/Arthuranjo/sistema_controle_de_gastos",
+
+        demo: "#",
+
+        gallery: []
+
+    },
+
+    {
+        id: 4,
+
+        title: "Sistema Inteligente de Monitoramento de Máquinas",
+
+        category: "IoT",
+
+        status: "Concluído",
+
+        featured: true,
+
+        year: "2025",
+
+        duration: "Projeto Acadêmico",
+
+        team: "Projeto Acadêmico",
+
+        role: "IoT Developer",
+
+        image: "assets/img/projects/cosmica.png",
+
+        description:
+            "Sistema inteligente de monitoramento industrial desenvolvido com ESP32 para acompanhar temperatura e vibração de máquinas em tempo real. O projeto utiliza sensores, display OLED, alertas sonoros e comunicação MQTT integrada ao EMQX Cloud.",
+
+        technologies: [
+            "C++",
+            "ESP32",
+            "MPU6050",
+            "OLED SSD1306",
+            "MQTT",
+            "EMQX Cloud",
+            "PlatformIO",
+            "Wokwi"
+        ],
+
+        features: [
+            "Monitoramento de Temperatura",
+            "Monitoramento de Vibração",
+            "Alertas Sonoros",
+            "Display OLED",
+            "Comunicação MQTT",
+            "Integração com EMQX Cloud",
+            "Simulação no Wokwi"
+        ],
+
+        metrics: {
+            modules: 3,
+            technologies: 8,
+            users: [
+                "Operador"
+            ]
+        },
+
+        github: "https://github.com/Arthuranjo/sistema--monitoramento",
+
+        demo: "#",
+
+        gallery: []
+
+    },
+
+
 ];
 
 /* ===========================
@@ -142,9 +263,7 @@ function renderProjects() {
 
     container.innerHTML = "";
 
-    projects.forEach((project, index) => {
-
-        const reverse = index % 2 !== 0 ? "reverse" : "";
+    projects.forEach((project) => {
 
         const technologies = project.technologies
             .map(tech => `<span>${tech}</span>`)
@@ -163,7 +282,11 @@ function renderProjects() {
 
         container.innerHTML += `
 
-        <article class="project-card ${reverse}">
+        <article class="project-card">
+
+            <!-- =========================
+                 IMAGEM
+            ========================== -->
 
             <div class="project-image">
 
@@ -186,6 +309,11 @@ function renderProjects() {
 
             </div>
 
+
+            <!-- =========================
+                 INFORMAÇÕES
+            ========================== -->
+
             <div class="project-info">
 
                 <div class="project-top">
@@ -200,13 +328,20 @@ function renderProjects() {
 
                 </div>
 
+
                 <h3>
                     ${project.title}
                 </h3>
 
+
+                <!-- DESCRIÇÃO VISÍVEL -->
+
                 <p class="project-description">
                     ${project.description}
                 </p>
+
+
+                <!-- TECNOLOGIAS VISÍVEIS -->
 
                 <div class="project-technologies">
 
@@ -214,95 +349,193 @@ function renderProjects() {
 
                 </div>
 
-                <div class="project-features">
 
-                    ${features}
+                <!-- =========================
+                     CONTEÚDO EXTRA
+                ========================== -->
+
+                <div class="project-extra">
+
+
+                    <!-- FUNCIONALIDADES -->
+
+                    <div class="project-section">
+
+                        <h4>
+                            Funcionalidades
+                        </h4>
+
+                        <div class="project-features">
+
+                            ${features}
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MÉTRICAS -->
+
+                    <div class="project-section">
+
+                        <h4>
+                            Informações do projeto
+                        </h4>
+
+                        <div class="project-metrics">
+
+                            <div class="metric">
+
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <span>${project.year}</span>
+
+                            </div>
+
+
+                            <div class="metric">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                                <span>${project.duration}</span>
+
+                            </div>
+
+
+                            <div class="metric">
+
+                                <i class="fa-solid fa-user"></i>
+
+                                <span>${project.role}</span>
+
+                            </div>
+
+
+                            <div class="metric">
+
+                                <i class="fa-solid fa-users"></i>
+
+                                <span>${project.team}</span>
+
+                            </div>
+
+
+                            <div class="metric">
+
+                                <i class="fa-solid fa-layer-group"></i>
+
+                                <span>
+                                    ${project.metrics.modules} módulos
+                                </span>
+
+                            </div>
+
+
+                            <div class="metric">
+
+                                <i class="fa-solid fa-code"></i>
+
+                                <span>
+                                    ${project.metrics.technologies} tecnologias
+                                </span>
+
+                            </div>
+
+
+                            <div class="metric">
+
+                                <i class="fa-solid fa-user-group"></i>
+
+                                <span>${users}</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BOTÕES -->
+
+                    <div class="project-buttons">
+
+                        <a
+                            href="${project.github}"
+                            target="_blank"
+                            class="btn">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            GitHub
+
+                        </a>
+
+
+                        <a
+                            href="${project.demo}"
+                            target="_blank"
+                            class="btn btn-primary">
+
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            Demo
+
+                        </a>
+
+                    </div>
+
 
                 </div>
 
-                <div class="project-metrics">
 
-                    <div class="metric">
+                <!-- =========================
+                     BOTÃO VER MAIS
+                ========================== -->
 
-                        <i class="fa-regular fa-calendar"></i>
+                <button
+                    class="project-toggle"
+                    type="button">
 
-                        <span>${project.year}</span>
+                    <span>Ver mais</span>
 
-                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
 
-                    <div class="metric">
-
-                        <i class="fa-solid fa-user"></i>
-
-                        <span>${project.role}</span>
-
-                    </div>
-
-                    <div class="metric">
-
-                        <i class="fa-solid fa-users"></i>
-
-                        <span>${project.team}</span>
-
-                    </div>
-
-                    <div class="metric">
-
-                        <i class="fa-solid fa-layer-group"></i>
-
-                        <span>${project.metrics.modules} módulos</span>
-
-                    </div>
-
-                    <div class="metric">
-
-                        <i class="fa-solid fa-code"></i>
-
-                        <span>${project.metrics.technologies} tecnologias</span>
-
-                    </div>
-
-                    <div class="metric">
-
-                        <i class="fa-solid fa-user-group"></i>
-
-                        <span>${users}</span>
-
-                    </div>
-
-                </div>
-
-                <div class="project-buttons">
-
-                    <a
-                        href="${project.github}"
-                        target="_blank"
-                        class="btn">
-
-                        <i class="fa-brands fa-github"></i>
-
-                        GitHub
-
-                    </a>
-
-                    <a
-                        href="${project.demo}"
-                        target="_blank"
-                        class="btn btn-primary">
-
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-
-                        Demo
-
-                    </a>
-
-                </div>
+                </button>
 
             </div>
 
         </article>
 
         `;
+
+    });
+
+
+    /* ===========================
+       Botão Ver Mais / Ver Menos
+    =========================== */
+
+    document.querySelectorAll(".project-toggle").forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const card = button.closest(".project-card");
+
+            const isExpanded = card.classList.toggle("expanded");
+
+            const text = button.querySelector("span");
+
+            if (isExpanded) {
+
+                text.textContent = "Ver menos";
+
+            } else {
+
+                text.textContent = "Ver mais";
+
+            }
+
+        });
 
     });
 
