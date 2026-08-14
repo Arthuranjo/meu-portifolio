@@ -1409,3 +1409,181 @@ section{
     }
 
 }
+
+
+
+.certifications-container {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 70px;
+
+}
+
+.certification-card {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 28px;
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 18px;
+
+    transition: .35s ease;
+
+}
+
+.certification-card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--color-primary);
+
+    box-shadow: var(--shadow);
+
+}
+
+.certification-icon {
+
+    flex-shrink: 0;
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: rgba(59, 130, 246, .12);
+
+    color: var(--color-primary);
+
+    font-size: 1.5rem;
+
+}
+
+.certification-info {
+
+    flex: 1;
+
+}
+
+.certification-category {
+
+    font-size: .75rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--color-primary);
+
+    font-weight: 600;
+
+}
+
+.certification-info h3 {
+
+    margin: 6px 0;
+
+    font-size: 1.15rem;
+
+    color: var(--color-white);
+
+}
+
+.certification-info p {
+
+    margin: 0;
+
+    color: var(--color-text-light);
+
+    font-size: .9rem;
+
+}
+
+.certificate-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    border: 1px solid var(--color-border);
+
+    border-radius: 10px;
+
+    color: var(--color-text);
+
+    font-size: .85rem;
+
+    white-space: nowrap;
+
+    transition: .3s;
+
+}
+
+.certificate-button:hover {
+
+    background: var(--color-primary);
+
+    border-color: var(--color-primary);
+
+    color: white;
+
+}
+
+@media (max-width: 768px) {
+
+    .certifications-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .certification-card {
+
+        align-items: flex-start;
+
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .certification-card {
+
+        flex-direction: column;
+
+    }
+
+    .certificate-button {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+}
