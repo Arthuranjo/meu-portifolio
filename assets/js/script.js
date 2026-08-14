@@ -25,7 +25,7 @@ const certifications = [
 
         icon: "fa-solid fa-code",
 
-        certificateUrl: "#"
+        certificateUrl: "https://www.credly.com/badges/18c52b8e-ec56-479c-aeaf-fa28fffa5a0e"
     },
 
     {
@@ -39,7 +39,7 @@ const certifications = [
 
         icon: "fa-solid fa-code",
 
-        certificateUrl: "#"
+        certificateUrl: "https://www.credly.com/badges/4392a5ba-9b80-4cfe-9b19-79e1b7a82f76"
     },
 
     {
@@ -53,7 +53,7 @@ const certifications = [
 
         icon: "fa-solid fa-shield-halved",
 
-        certificateUrl: "#"
+        certificateUrl: "https://www.credly.com/badges/466cc845-7c6d-4407-b5fa-9f7374ae96b9"
     },
 
     {
