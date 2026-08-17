@@ -5,40 +5,28 @@
 }
 
 html{
-
     scroll-behavior:smooth;
-
 }
 
 body{
 
     font-family:var(--font-family);
-
     background:var(--color-background);
-
     color:var(--color-text);
-
     overflow-x:hidden;
-
 }
 
 img{
-
     display:block;
     max-width:100%;
-
 }
 
 a{
-
     text-decoration:none;
-
 }
 
 ul{
-
     list-style:none;
-
 }
 
 button{
@@ -46,19 +34,15 @@ button{
     border:none;
     background:none;
     cursor:pointer;
-
 }
 
 section{
-
     padding:var(--section-padding) 0;
-
 }
 
 .container{
 
     width:min(90%, var(--container-width));
-
     margin:auto;
 
 }
@@ -66,14 +50,10 @@ section{
 .header{
 
     position:fixed;
-
     top:0;
     left:0;
-
     width:100%;
-
     z-index:1000;
-
     transition:.4s;
 
 }
@@ -81,11 +61,8 @@ section{
 .navbar{
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     height:90px;
 
 }
@@ -93,9 +70,7 @@ section{
 .logo{
 
     font-size:2rem;
-
     font-weight:700;
-
     color:var(--color-white);
 
 }
@@ -109,7 +84,6 @@ section{
 .nav-menu{
 
     display:flex;
-
     gap:40px;
 
 }
@@ -117,11 +91,8 @@ section{
 .nav-menu a{
 
     color:var(--color-text);
-
     font-weight:500;
-
     transition:var(--transition);
-
     position:relative;
 
 }
@@ -135,18 +106,12 @@ section{
 .nav-menu a::after{
 
     content:"";
-
     position:absolute;
-
     left:0;
     bottom:-8px;
-
     width:0;
-
     height:2px;
-
     background:var(--color-primary);
-
     transition:.3s;
 
 }
@@ -160,9 +125,7 @@ section{
 .home{
 
     min-height:100vh;
-
     display:flex;
-
     align-items:center;
 
 }
@@ -170,11 +133,8 @@ section{
 .home-content{
 
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     align-items:center;
-
     gap:80px;
 
 }
@@ -182,7 +142,6 @@ section{
 .home-image{
 
     display:flex;
-
     justify-content:center;
 
 }
@@ -191,11 +150,8 @@ section{
 .home-image img{
 
     width:370px;
-
     border-radius:50%;
-
     border:5px solid var(--color-primary);
-
     box-shadow:var(--shadow);
 
 }
@@ -203,7 +159,6 @@ section{
 .home-subtitle{
 
     color:var(--color-primary);
-
     font-size:1.1rem;
 
 }
@@ -212,9 +167,7 @@ section{
 .home h1{
 
     font-size:4rem;
-
     color:var(--color-white);
-
     margin:15px 0;
 
 }
@@ -222,9 +175,7 @@ section{
 .home h2{
 
     font-size:2rem;
-
     margin-bottom:20px;
-
     color:var(--color-primary-light);
 
 }
@@ -233,9 +184,7 @@ section{
 .home p{
 
     max-width:550px;
-
     line-height:1.8;
-
     margin-bottom:35px;
 
 }
@@ -243,7 +192,6 @@ section{
 .home-buttons{
 
     display:flex;
-
     gap:20px;
 
 }
@@ -251,13 +199,9 @@ section{
 .btn{
 
     padding:14px 32px;
-
     border-radius:50px;
-
     border:2px solid var(--color-primary);
-
     color:var(--color-white);
-
     transition:.3s;
 
 }
@@ -289,7 +233,6 @@ section{
 .section-header{
 
     text-align: center;
-
     margin-bottom: 80px;
 
 }
@@ -297,11 +240,8 @@ section{
 .section-subtitle{
 
     color: var(--color-primary);
-
     font-weight: 600;
-
     text-transform: uppercase;
-
     letter-spacing: 2px;
 
 }
@@ -309,9 +249,7 @@ section{
 .section-title{
 
     font-size: 2.8rem;
-
     color: var(--color-white);
-
     margin-top: 10px;
 
 }
@@ -319,11 +257,8 @@ section{
 .about-content{
 
     display: grid;
-
     grid-template-columns: 350px 1fr;
-
     gap: 80px;
-
     align-items: center;
 
 }
@@ -331,7 +266,6 @@ section{
 .about-image{
 
     display: flex;
-
     justify-content: center;
 
 }
@@ -339,9 +273,7 @@ section{
 .about-image img{
 
     width: 320px;
-
     border-radius: 20px;
-
     box-shadow: var(--shadow);
 
 }
@@ -349,9 +281,7 @@ section{
 .about-text h3{
 
     font-size: 2rem;
-
     color: var(--color-white);
-
     margin-bottom: 20px;
 
 }
@@ -359,9 +289,7 @@ section{
 .about-text p{
 
     line-height: 1.9;
-
     color: var(--color-text);
-
     margin-bottom: 20px;
 
 }
@@ -369,11 +297,8 @@ section{
 .about-list{
 
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 18px;
-
     margin-top: 40px;
 
 }
@@ -381,11 +306,8 @@ section{
 .about-item{
 
     display: flex;
-
     align-items: center;
-
     gap: 12px;
-
     font-weight: 500;
 
 }
@@ -399,11 +321,8 @@ section{
 .about-cards{
 
     display: grid;
-
     grid-template-columns: repeat(3,1fr);
-
     gap: 30px;
-
     margin-top: 90px;
 
 }
@@ -411,15 +330,10 @@ section{
 .about-card{
 
     background: var(--color-surface);
-
     padding: 35px;
-
     border-radius: var(--radius);
-
     text-align: center;
-
     transition: .3s;
-
     border: 1px solid var(--color-border);
 
 }
@@ -427,7 +341,6 @@ section{
 .about-card:hover{
 
     transform: translateY(-10px);
-
     border-color: var(--color-primary);
 
 }
@@ -435,9 +348,7 @@ section{
 .about-card h3{
 
     font-size: 2.5rem;
-
     color: var(--color-primary);
-
     margin-bottom: 10px;
 
 }
@@ -452,13 +363,9 @@ section{
 .section-description{
 
     max-width: 700px;
-
     margin: 20px auto 0;
-
     text-align: center;
-
     color: var(--color-text-light);
-
     line-height: 1.8;
 
 }
@@ -466,11 +373,8 @@ section{
 .technologies-grid{
 
     display: grid;
-
     grid-template-columns: repeat(2,1fr);
-
     gap: 28px;
-
     margin-top: 65px;
 
 }
@@ -478,13 +382,9 @@ section{
 .tech-card{
 
     background: var(--color-surface);
-
     border: 1px solid var(--color-border);
-
     border-radius: var(--radius);
-
     padding: 15px;
-
     transition: .35s ease;
 
 }
@@ -492,9 +392,7 @@ section{
 .tech-card:hover{
 
     transform: translateY(-8px);
-
     border-color: var(--color-primary);
-
     box-shadow: var(--shadow);
 
 }
@@ -502,9 +400,7 @@ section{
 .tech-card h3{
 
     color: var(--color-white);
-
     margin-bottom: 20px;
-
     font-size: 1.5rem;
 
 }
@@ -512,9 +408,7 @@ section{
 .tech-list{
 
     display: grid;
-
     grid-template-columns: repeat(2,1fr);
-
     gap: 8px;
 
 }
@@ -522,21 +416,13 @@ section{
 .tech-item{
 
     position: relative;
-
     display:flex;
-
     justify-content:flex-start;
-
     align-items:center;
-
     gap: 10px;
-
     padding:12px;
-
     border-radius:12px;
-
     transition:.3s;
-
     cursor:pointer;
 
 }
@@ -544,9 +430,7 @@ section{
 .tech-info{
 
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
 }
@@ -554,11 +438,8 @@ section{
 .level{
 
     padding:4px 10px;
-
     border-radius:20px;
-
     font-size:.75rem;
-
     font-weight:600;
 
 }
@@ -566,7 +447,6 @@ section{
 .primary{
 
     background:#1d4ed8;
-
     color:white;
 
 }
@@ -574,7 +454,6 @@ section{
 .intermediate{
 
     background:#374151;
-
     color:white;
 
 }
@@ -582,7 +461,6 @@ section{
 .learning{
 
     background:#854d0e;
-
     color:white;
 
 }
@@ -590,29 +468,17 @@ section{
 .tooltip{
 
     position:absolute;
-
     left:0;
-
     top:120%;
-
     width:280px;
-
     padding:20px;
-
     border-radius:12px;
-
     background:var(--color-surface);
-
     border:1px solid var(--color-border);
-
     box-shadow:var(--shadow);
-
     opacity:0;
-
     visibility:hidden;
-
     transition:.3s;
-
     z-index:100;
 
 }
@@ -620,7 +486,6 @@ section{
 .tech-item:hover .tooltip{
 
     opacity:1;
-
     visibility:visible;
 
 }
@@ -634,11 +499,8 @@ section{
 .tech-item i{
 
     font-size: 1.5rem;
-
     color: var(--color-primary);
-
     width: 30px;
-
     text-align: center;
 
 }
@@ -646,7 +508,6 @@ section{
 .tech-item span{
 
     color: var(--color-text);
-
     font-weight: 500;
 
 }
@@ -664,9 +525,7 @@ section{
 .project-section h4{
 
     color: var(--color-white);
-
     font-size: 1.1rem;
-
     margin-bottom: 18px;
 
 }
@@ -674,11 +533,8 @@ section{
 .projects-container{
 
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 30px;
-
     margin-top: 80px;
 
 }
@@ -686,17 +542,11 @@ section{
 .project-card{
 
     width: 100%;
-
     background: var(--color-surface);
-
     border: 1px solid var(--color-border);
-
     border-radius: 20px;
-
     overflow: hidden;
-
     box-shadow: var(--shadow);
-
     transition: .4s ease;
 
 }
@@ -704,7 +554,6 @@ section{
 .project-card:hover{
 
     transform: translateY(-6px);
-
     border-color: var(--color-primary);
 
 }
@@ -717,15 +566,10 @@ section{
 .project-card .browser{
 
     width: 100%;
-
     border: none;
-
     border-radius: 0;
-
     box-shadow: none;
-
     overflow: hidden;
-
     background: #0f172a;
 
 }
@@ -739,15 +583,10 @@ section{
 .browser-header{
 
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     padding: 12px 18px;
-
     background: #0f172a;
-
     border-bottom: 1px solid var(--color-border);
 
 }
@@ -755,9 +594,7 @@ section{
 .browser-header span{
 
     width: 12px;
-
     height: 12px;
-
     border-radius: 50%;
 
 }
@@ -783,7 +620,6 @@ section{
 .project-image{
 
     overflow: hidden;
-
     width: 100%;
 
 }
@@ -791,11 +627,8 @@ section{
 .project-image img{
 
     width: 100%;
-
     height: auto;
-
     display: block;
-
     transition: .5s ease;
 
 }
@@ -814,9 +647,7 @@ section{
 .project-info{
 
     display: flex;
-
     flex-direction: column;
-
     padding: 22px 26px 26px;
 
 }
@@ -829,13 +660,9 @@ section{
 .project-top{
 
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     margin-bottom: 20px;
-
     gap: 15px;
 
 }
@@ -843,13 +670,9 @@ section{
 .project-category{
 
     background: rgba(59,130,246,.15);
-
     color: var(--color-primary);
-
     padding: 7px 16px;
-
     border-radius: 40px;
-
     font-weight: 600;
 
 }
@@ -857,13 +680,9 @@ section{
 .project-status{
 
     background: #16a34a;
-
     color: white;
-
     padding: 7px 16px;
-
     border-radius: 40px;
-
     font-size: .9rem;
 
 }
@@ -876,9 +695,7 @@ section{
 .project-info h3{
 
     font-size: 2rem;
-
     color: var(--color-white);
-
     margin-bottom: 15px;
 
 }
@@ -891,9 +708,7 @@ section{
 .project-description{
 
     line-height: 1.8;
-
     color: var(--color-text-light);
-
     margin-bottom: 25px;
 
 }
@@ -906,11 +721,8 @@ section{
 .project-technologies{
 
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 10px;
-
     margin-bottom: 25px;
 
 }
@@ -918,13 +730,9 @@ section{
 .project-technologies span{
 
     padding: 8px 15px;
-
     border-radius: 50px;
-
     background: var(--color-surface);
-
     border: 1px solid var(--color-border);
-
     transition: .3s;
 
 }
@@ -932,7 +740,6 @@ section{
 .project-technologies span:hover{
 
     background: var(--color-primary);
-
     color: white;
 
 }
@@ -945,11 +752,8 @@ section{
 .project-extra{
 
     max-height: 0;
-
     overflow: hidden;
-
     opacity: 0;
-
     transition:
 
         max-height .6s ease,
@@ -961,9 +765,7 @@ section{
 .project-card.expanded .project-extra{
 
     max-height: 1000px;
-
     opacity: 1;
-
     margin-top: 10px;
 
 }
@@ -976,11 +778,8 @@ section{
 .project-features{
 
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 12px;
-
     margin-bottom: 30px;
 
 }
@@ -988,9 +787,7 @@ section{
 .feature{
 
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
 }
@@ -1009,11 +806,8 @@ section{
 .project-metrics{
 
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 15px;
-
     margin-bottom: 30px;
 
 }
@@ -1021,9 +815,7 @@ section{
 .metric{
 
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
 }
@@ -1031,7 +823,6 @@ section{
 .metric i{
 
     color: var(--color-primary);
-
     width: 18px;
 
 }
@@ -1050,9 +841,7 @@ section{
 .project-buttons{
 
     display: flex;
-
     gap: 15px;
-
     flex-wrap: wrap;
 
 }
@@ -1065,31 +854,18 @@ section{
 .project-toggle{
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     gap: 8px;
-
     width: 100%;
-
     margin-top: 30px;
-
     padding: 13px 20px;
-
     border: 1px solid var(--color-border);
-
     border-radius: 10px;
-
     background: transparent;
-
     color: var(--color-text);
-
     cursor: pointer;
-
     font-size: .95rem;
-
     transition: .3s ease;
 
 }
@@ -1097,9 +873,7 @@ section{
 .project-toggle:hover{
 
     background: var(--color-primary);
-
     border-color: var(--color-primary);
-
     color: white;
 
 }
@@ -1113,6 +887,108 @@ section{
 .project-card.expanded .project-toggle i{
 
     transform: rotate(180deg);
+
+}
+
+/* =========================
+   CARROSSEL
+========================= */
+
+.carousel{
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.carousel-image{
+
+    width: 100%;
+    display: block;
+    transition: opacity .3s ease;
+
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.carousel-button{
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 50%;
+    background: rgba(15,23,42,.75);
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+    transition: .3s ease;
+    backdrop-filter: blur(5px);
+
+}
+
+.carousel-button:hover{
+
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+
+}
+
+.carousel-prev{
+
+    left: 15px;
+
+}
+
+.carousel-next{
+
+    right: 15px;
+
+}
+
+
+/* =========================
+   INDICADORES
+========================= */
+
+.carousel-indicators{
+
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    z-index: 5;
+
+}
+
+.carousel-indicator{
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.5);
+    cursor: pointer;
+    transition: .3s ease;
+
+}
+
+.carousel-indicator.active{
+
+    width: 22px;
+    border-radius: 10px;
+    background: white;
 
 }
 
@@ -1158,29 +1034,20 @@ section{
 
 .timeline {
     position: relative;
-
     max-width: 900px;
-
     margin: 90px auto 0;
-
     padding: 20px 0;
 }
 
 .timeline::before {
 
     content: "";
-
     position: absolute;
-
     top: 0;
     bottom: 0;
-
     left: 50%;
-
     width: 2px;
-
     background: var(--color-border);
-
     transform: translateX(-50%);
 
 }
@@ -1188,9 +1055,7 @@ section{
 .timeline-item {
 
     position: relative;
-
     width: 50%;
-
     padding: 0 50px 80px;
 
 }
@@ -1204,18 +1069,12 @@ section{
 .timeline-dot {
 
     position: absolute;
-
     top: 10px;
-
     width: 16px;
     height: 16px;
-
     border-radius: 50%;
-
     background: var(--color-background);
-
     border: 3px solid var(--color-primary);
-
     z-index: 2;
 
 }
@@ -1235,13 +1094,9 @@ section{
 .timeline-content {
 
     background: var(--color-surface);
-
     border: 1px solid var(--color-border);
-
     border-radius: var(--radius);
-
     padding: 30px;
-
     transition: .35s ease;
 
 }
@@ -1249,9 +1104,7 @@ section{
 .timeline-content:hover {
 
     transform: translateY(-8px);
-
     border-color: var(--color-primary);
-
     box-shadow: var(--shadow);
 
 }
@@ -1259,13 +1112,9 @@ section{
 .timeline-date {
 
     display: inline-block;
-
     color: var(--color-primary);
-
     font-weight: 700;
-
     font-size: .95rem;
-
     margin-bottom: 10px;
 
 }
@@ -1273,15 +1122,10 @@ section{
 .timeline-type {
 
     display: block;
-
     color: var(--color-text-light);
-
     font-size: .85rem;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
     margin-bottom: 15px;
 
 }
@@ -1289,9 +1133,7 @@ section{
 .timeline-content h3 {
 
     color: var(--color-white);
-
     font-size: 1.4rem;
-
     margin-bottom: 8px;
 
 }
@@ -1299,11 +1141,8 @@ section{
 .timeline-content h4 {
 
     color: var(--color-primary-light);
-
     font-size: 1rem;
-
     font-weight: 500;
-
     margin-bottom: 18px;
 
 }
@@ -1311,9 +1150,7 @@ section{
 .timeline-content p {
 
     color: var(--color-text-light);
-
     line-height: 1.8;
-
     margin-bottom: 20px;
 
 }
@@ -1321,9 +1158,7 @@ section{
 .timeline-tags {
 
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 8px;
 
 }
@@ -1331,13 +1166,9 @@ section{
 .timeline-tags span {
 
     padding: 6px 12px;
-
     border-radius: 20px;
-
     background: rgba(59, 130, 246, .1);
-
     color: var(--color-primary-light);
-
     font-size: .8rem;
 
 }
@@ -1345,7 +1176,6 @@ section{
 .timeline-item.current .timeline-dot {
 
     background: var(--color-primary);
-
     box-shadow: 0 0 0 6px rgba(59, 130, 246, .15);
 
 }
@@ -1367,7 +1197,6 @@ section{
     .timeline::before {
 
         left: 0;
-
         transform: none;
 
     }
@@ -1375,9 +1204,7 @@ section{
     .timeline-item {
 
         width: 100%;
-
         margin-left: 0 !important;
-
         padding:
 
             0
@@ -1397,7 +1224,6 @@ section{
     .timeline-item:nth-child(even) .timeline-dot {
 
         left: -8px;
-
         right: auto;
 
     }
@@ -1415,11 +1241,8 @@ section{
 .certifications-container {
 
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 25px;
-
     margin-top: 70px;
 
 }
@@ -1427,21 +1250,13 @@ section{
 .certification-card {
 
     position: relative;
-
     display: flex;
-
     align-items: center;
-
     gap: 20px;
-
     padding: 28px;
-
     background: var(--color-surface);
-
     border: 1px solid var(--color-border);
-
     border-radius: 18px;
-
     transition: .35s ease;
 
 }
@@ -1449,9 +1264,7 @@ section{
 .certification-card:hover {
 
     transform: translateY(-6px);
-
     border-color: var(--color-primary);
-
     box-shadow: var(--shadow);
 
 }
@@ -1459,23 +1272,14 @@ section{
 .certification-icon {
 
     flex-shrink: 0;
-
     width: 60px;
-
     height: 60px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 15px;
-
     background: rgba(59, 130, 246, .12);
-
     color: var(--color-primary);
-
     font-size: 1.5rem;
 
 }
@@ -1489,13 +1293,9 @@ section{
 .certification-category {
 
     font-size: .75rem;
-
     text-transform: uppercase;
-
     letter-spacing: 1px;
-
     color: var(--color-primary);
-
     font-weight: 600;
 
 }
@@ -1503,9 +1303,7 @@ section{
 .certification-info h3 {
 
     margin: 6px 0;
-
     font-size: 1.15rem;
-
     color: var(--color-white);
 
 }
@@ -1513,9 +1311,7 @@ section{
 .certification-info p {
 
     margin: 0;
-
     color: var(--color-text-light);
-
     font-size: .9rem;
 
 }
@@ -1523,23 +1319,14 @@ section{
 .certificate-button {
 
     display: flex;
-
     align-items: center;
-
     gap: 8px;
-
     padding: 10px 15px;
-
     border: 1px solid var(--color-border);
-
     border-radius: 10px;
-
     color: var(--color-text);
-
     font-size: .85rem;
-
     white-space: nowrap;
-
     transition: .3s;
 
 }
@@ -1547,9 +1334,7 @@ section{
 .certificate-button:hover {
 
     background: var(--color-primary);
-
     border-color: var(--color-primary);
-
     color: white;
 
 }
@@ -1581,7 +1366,6 @@ section{
     .certificate-button {
 
         width: 100%;
-
         justify-content: center;
 
     }
@@ -1596,13 +1380,9 @@ section{
 .contact-container {
 
     display: grid;
-
     grid-template-columns: 1fr 1.2fr;
-
     gap: 80px;
-
     margin-top: 70px;
-
     align-items: start;
 
 }
@@ -1610,9 +1390,7 @@ section{
 .contact-info h3 {
 
     font-size: 2rem;
-
     color: var(--color-white);
-
     margin-bottom: 20px;
 
 }
@@ -1620,11 +1398,8 @@ section{
 .contact-info > p {
 
     color: var(--color-text-light);
-
     line-height: 1.8;
-
     max-width: 500px;
-
     margin-bottom: 40px;
 
 }
@@ -1632,9 +1407,7 @@ section{
 .contact-links {
 
     display: flex;
-
     flex-direction: column;
-
     gap: 18px;
 
 }
@@ -1642,19 +1415,12 @@ section{
 .contact-item {
 
     display: flex;
-
     align-items: center;
-
     gap: 18px;
-
     padding: 18px;
-
     border: 1px solid var(--color-border);
-
     border-radius: 14px;
-
     background: var(--color-surface);
-
     transition: .3s ease;
 
 }
@@ -1662,7 +1428,6 @@ section{
 .contact-item:hover {
 
     transform: translateX(8px);
-
     border-color: var(--color-primary);
 
 }
@@ -1670,23 +1435,14 @@ section{
 .contact-icon {
 
     width: 50px;
-
     height: 50px;
-
     flex-shrink: 0;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border-radius: 12px;
-
     background: rgba(59, 130, 246, .12);
-
     color: var(--color-primary);
-
     font-size: 1.2rem;
 
 }
@@ -1694,11 +1450,8 @@ section{
 .contact-item span {
 
     display: block;
-
     color: var(--color-text-light);
-
     font-size: .8rem;
-
     margin-bottom: 4px;
 
 }
@@ -1706,7 +1459,6 @@ section{
 .contact-item strong {
 
     color: var(--color-white);
-
     font-size: .95rem;
 
 }
@@ -1714,11 +1466,8 @@ section{
 .contact-form {
 
     padding: 35px;
-
     background: var(--color-surface);
-
     border: 1px solid var(--color-border);
-
     border-radius: 20px;
 
 }
@@ -1726,11 +1475,8 @@ section{
 .form-group {
 
     display: flex;
-
     flex-direction: column;
-
     gap: 8px;
-
     margin-bottom: 22px;
 
 }
@@ -1738,9 +1484,7 @@ section{
 .form-group label {
 
     color: var(--color-white);
-
     font-size: .9rem;
-
     font-weight: 500;
 
 }
@@ -1749,23 +1493,14 @@ section{
 .form-group textarea {
 
     width: 100%;
-
     padding: 14px 16px;
-
     border: 1px solid var(--color-border);
-
     border-radius: 10px;
-
     background: var(--color-background);
-
     color: var(--color-white);
-
     font-family: inherit;
-
     font-size: .95rem;
-
     outline: none;
-
     transition: .3s ease;
 
 }
@@ -1774,7 +1509,6 @@ section{
 .form-group textarea:focus {
 
     border-color: var(--color-primary);
-
     box-shadow: 0 0 0 3px rgba(59, 130, 246, .1);
 
 }
@@ -1782,7 +1516,6 @@ section{
 .form-group textarea {
 
     resize: vertical;
-
     min-height: 150px;
 
 }
@@ -1790,33 +1523,19 @@ section{
 .contact-submit {
 
     width: 100%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 12px;
-
     padding: 15px 25px;
-
     border: none;
-
     border-radius: 10px;
-
     background: var(--color-primary);
-
     color: white;
-
     font-family: inherit;
-
     font-size: .95rem;
-
     font-weight: 600;
-
     cursor: pointer;
-
     transition: .3s ease;
 
 }
@@ -1824,7 +1543,6 @@ section{
 .contact-submit:hover {
 
     transform: translateY(-3px);
-
     box-shadow: 0 10px 25px rgba(59, 130, 246, .2);
 
 }
@@ -1834,7 +1552,6 @@ section{
     .contact-container {
 
         grid-template-columns: 1fr;
-
         gap: 50px;
 
     }
@@ -1850,11 +1567,8 @@ section{
 .footer {
 
     margin-top: 100px;
-
     padding: 60px 0 30px;
-
     border-top: 1px solid var(--color-border);
-
     background: var(--color-background);
 
 }
@@ -1862,11 +1576,8 @@ section{
 .footer-content {
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 30px;
 
 }
@@ -1874,9 +1585,7 @@ section{
 .footer-brand h3 {
 
     margin-bottom: 6px;
-
     color: var(--color-white);
-
     font-size: 1.3rem;
 
 }
@@ -1884,9 +1593,7 @@ section{
 .footer-brand p {
 
     margin: 0;
-
     color: var(--color-text-light);
-
     font-size: .9rem;
 
 }
@@ -1894,9 +1601,7 @@ section{
 .footer-social {
 
     display: flex;
-
     align-items: center;
-
     gap: 12px;
 
 }
@@ -1905,25 +1610,15 @@ section{
 .footer-social a {
 
     width: 44px;
-
     height: 44px;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     border: 1px solid var(--color-border);
-
     border-radius: 10px;
-
     color: var(--color-text-light);
-
     background: var(--color-surface);
-
     font-size: 1.1rem;
-
     transition: .3s ease;
 
 }
@@ -1931,13 +1626,9 @@ section{
 .footer-social a:hover {
 
     transform: translateY(-4px);
-
     color: white;
-
     background: var(--color-primary);
-
     border-color: var(--color-primary);
-
     box-shadow: 0 8px 20px rgba(59, 130, 246, .2);
 
 }
@@ -1945,17 +1636,11 @@ section{
 .footer-nav {
 
     display: flex;
-
     justify-content: center;
-
     flex-wrap: wrap;
-
     gap: 25px;
-
     margin: 45px 0;
-
     padding-top: 30px;
-
     border-top: 1px solid var(--color-border);
 
 }
@@ -1963,9 +1648,7 @@ section{
 .footer-nav a {
 
     color: var(--color-text-light);
-
     font-size: .9rem;
-
     transition: .3s ease;
 
 }
@@ -1979,15 +1662,10 @@ section{
 .footer-bottom {
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 20px;
-
     padding-top: 25px;
-
     border-top: 1px solid var(--color-border);
 
 }
@@ -1995,9 +1673,7 @@ section{
 .footer-bottom p {
 
     margin: 0;
-
     color: var(--color-text-light);
-
     font-size: .8rem;
 
 }
@@ -2007,7 +1683,6 @@ section{
     .footer-content {
 
         flex-direction: column;
-
         text-align: center;
 
     }
@@ -2021,7 +1696,6 @@ section{
     .footer-nav {
 
         gap: 15px 20px;
-
         margin: 35px 0;
 
     }
@@ -2029,7 +1703,6 @@ section{
     .footer-bottom {
 
         flex-direction: column;
-
         text-align: center;
 
     }
@@ -2039,7 +1712,6 @@ section{
 .contact-submit:disabled {
 
     opacity: 0.7;
-
     cursor: not-allowed;
 
 }

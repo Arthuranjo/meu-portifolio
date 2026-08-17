@@ -56,11 +56,11 @@ const projects = [
         demo: "#",
 
         gallery: [
-            "home.png",
-            "login.png",
-            "painel.png",
-            "pedidos.png"
-        ]
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+        ],
     },
 
     {
@@ -124,10 +124,10 @@ const projects = [
         demo: "#",
 
         gallery: [
-            "dashboard.png",
-            "alunos.png",
-            "agenda.png",
-            "pagamentos.png"
+          "assets/img/projects/cosmica.png",
+          "assets/img/projects/cosmica.png",
+          "assets/img/projects/cosmica.png",
+          "assets/img/projects/cosmica.png"  
         ]
     },
 
@@ -185,7 +185,12 @@ const projects = [
 
         demo: "#",
 
-        gallery: []
+        gallery: [
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+        ],
 
     },
 
@@ -246,7 +251,12 @@ const projects = [
 
         demo: "#",
 
-        gallery: []
+        gallery: [
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png",
+            "assets/img/projects/cosmica.png"
+        ],
 
     },
 
@@ -300,10 +310,35 @@ function renderProjects() {
 
                     </div>
 
-                    <img
-                        src="${project.image}"
-                        alt="${project.title}"
-                    >
+                    <div class="carousel">
+
+                        <img
+                            class="carousel-image"
+                            src="${project.gallery?.[0] || project.image}"
+                            alt="${project.title}"
+                        >
+
+                        <button
+                            class="carousel-button carousel-prev"
+                            type="button"
+                            aria-label="Imagem anterior">
+
+                            <i class="fa-solid fa-chevron-left"></i>
+
+                        </button>
+
+                        <button
+                            class="carousel-button carousel-next"
+                            type="button"
+                            aria-label="Próxima imagem">
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </button>
+
+                        <div class="carousel-indicators"></div>
+
+                    </div>
 
                 </div>
 
@@ -538,6 +573,195 @@ function renderProjects() {
         });
 
     });
+
+    /* ===========================
+   Carrossel dos Projetos
+=========================== */
+
+document.querySelectorAll(".project-card").forEach((card, index) => {
+
+    const project = projects[index];
+
+    const images = project.gallery?.length
+        ? project.gallery
+        : [project.image];
+
+    const image = card.querySelector(".carousel-image");
+
+    const previousButton = card.querySelector(".carousel-prev");
+
+    const nextButton = card.querySelector(".carousel-next");
+
+    const indicators = card.querySelector(".carousel-indicators");
+
+    let currentIndex = 0;
+
+
+    /* ===========================
+       Se tiver apenas uma imagem
+    =========================== */
+
+    if (images.length <= 1) {
+
+        previousButton.style.display = "none";
+
+        nextButton.style.display = "none";
+
+        return;
+
+    }
+
+
+    /* ===========================
+       Indicadores
+    =========================== */
+
+    images.forEach((_, imageIndex) => {
+
+        const indicator = document.createElement("span");
+
+        indicator.classList.add("carousel-indicator");
+
+        if (imageIndex === 0) {
+
+            indicator.classList.add("active");
+
+        }
+
+        indicator.addEventListener("click", () => {
+
+            currentIndex = imageIndex;
+
+            updateCarousel();
+
+        });
+
+        indicators.appendChild(indicator);
+
+    });
+
+
+    /* ===========================
+       Atualizar imagem
+    =========================== */
+
+    function updateCarousel() {
+
+        image.style.opacity = "0";
+
+        setTimeout(() => {
+
+            image.src = images[currentIndex];
+
+            image.style.opacity = "1";
+
+        }, 150);
+
+
+        const allIndicators =
+            indicators.querySelectorAll(".carousel-indicator");
+
+        allIndicators.forEach((indicator, indicatorIndex) => {
+
+            indicator.classList.toggle(
+                "active",
+                indicatorIndex === currentIndex
+            );
+
+        });
+
+    }
+
+
+    /* ===========================
+       Próxima imagem
+    =========================== */
+
+    nextButton.addEventListener("click", () => {
+
+        currentIndex++;
+
+        if (currentIndex >= images.length) {
+
+            currentIndex = 0;
+
+        }
+
+        updateCarousel();
+
+    });
+
+
+    /* ===========================
+       Imagem anterior
+    =========================== */
+
+    previousButton.addEventListener("click", () => {
+
+        currentIndex--;
+
+        if (currentIndex < 0) {
+
+            currentIndex = images.length - 1;
+
+        }
+
+        updateCarousel();
+
+    });
+
+
+    /* ===========================
+       Troca automática
+    =========================== */
+
+    let autoplay = setInterval(() => {
+
+        currentIndex++;
+
+        if (currentIndex >= images.length) {
+
+            currentIndex = 0;
+
+        }
+
+        updateCarousel();
+
+    }, 5000);
+
+
+    /* ===========================
+       Pausar ao passar o mouse
+    =========================== */
+
+    const carousel = card.querySelector(".carousel");
+
+    carousel.addEventListener("mouseenter", () => {
+
+        clearInterval(autoplay);
+
+    });
+
+
+    carousel.addEventListener("mouseleave", () => {
+
+        autoplay = setInterval(() => {
+
+            currentIndex++;
+
+            if (currentIndex >= images.length) {
+
+                currentIndex = 0;
+
+            }
+
+            updateCarousel();
+
+        }, 5000);
+
+    });
+
+});
 
 }
 
