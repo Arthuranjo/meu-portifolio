@@ -82,7 +82,7 @@ const projects = [
 
         role: "Back-end Developer",
 
-        image: "assets/img/projects/cosmica.png",
+        image: "assets/img/projects/pilates/tela-login.png",
 
         description:
             "Sistema web completo desenvolvido para gerenciamento de um estúdio de Pilates com controle de alunos, professores, planos, pagamentos, agendamentos, aulas, autenticação JWT e dashboard administrativo.",
@@ -124,10 +124,12 @@ const projects = [
         demo: "#",
 
         gallery: [
-          "assets/img/projects/cosmica.png",
-          "assets/img/projects/cosmica.png",
-          "assets/img/projects/cosmica.png",
-          "assets/img/projects/cosmica.png"  
+          "assets/img/projects/pilates/tela-login.png",
+          "assets/img/projects/pilates/tela-aluno.png",
+          "assets/img/projects/pilates/tela-professor.png",
+          "assets/img/projects/pilates/tela-admin.png",
+          "assets/img/projects/pilates/cadastro-aluno.png",
+          "assets/img/projects/pilates/recuperar-senha.png" 
         ]
     },
 
@@ -311,6 +313,7 @@ function renderProjects() {
                     </div>
 
                     <div class="carousel">
+                        <div class="carousel-background"></div>
 
                         <img
                             class="carousel-image"
@@ -574,178 +577,181 @@ function renderProjects() {
 
     });
 
+
     /* ===========================
    Carrossel dos Projetos
 =========================== */
 
-document.querySelectorAll(".project-card").forEach((card, index) => {
+    document.querySelectorAll(".project-card").forEach((card, index) => {
 
-    const project = projects[index];
+        const project = projects[index];
 
-    const images = project.gallery?.length
-        ? project.gallery
-        : [project.image];
+        const images = project.gallery?.length
+            ? project.gallery
+            : [project.image];
 
-    const image = card.querySelector(".carousel-image");
+        const image = card.querySelector(".carousel-image");
 
-    const previousButton = card.querySelector(".carousel-prev");
+        const background = card.querySelector(".carousel-background");
 
-    const nextButton = card.querySelector(".carousel-next");
+        const previousButton = card.querySelector(".carousel-prev");
 
-    const indicators = card.querySelector(".carousel-indicators");
+        const nextButton = card.querySelector(".carousel-next");
 
-    let currentIndex = 0;
+        const indicators = card.querySelector(".carousel-indicators");
 
-
-    /* ===========================
-       Se tiver apenas uma imagem
-    =========================== */
-
-    if (images.length <= 1) {
-
-        previousButton.style.display = "none";
-
-        nextButton.style.display = "none";
-
-        return;
-
-    }
+        let currentIndex = 0;
 
 
-    /* ===========================
-       Indicadores
-    =========================== */
+        /* ===========================
+        Atualizar fundo desfocado
+        =========================== */
 
-    images.forEach((_, imageIndex) => {
+        function updateBackground() {
 
-        const indicator = document.createElement("span");
-
-        indicator.classList.add("carousel-indicator");
-
-        if (imageIndex === 0) {
-
-            indicator.classList.add("active");
+            background.style.setProperty(
+                "--carousel-image",
+                `url("${images[currentIndex]}")`
+            );
 
         }
 
-        indicator.addEventListener("click", () => {
 
-            currentIndex = imageIndex;
+        /* ===========================
+        Atualizar imagem
+        =========================== */
+
+        function updateCarousel() {
+
+            image.style.opacity = "0";
+
+            setTimeout(() => {
+
+                image.src = images[currentIndex];
+
+                updateBackground();
+
+                image.style.opacity = "1";
+
+            }, 150);
+
+
+            /* Atualizar indicadores */
+
+            const allIndicators =
+                indicators.querySelectorAll(".carousel-indicator");
+
+            allIndicators.forEach((indicator, indicatorIndex) => {
+
+                indicator.classList.toggle(
+                    "active",
+                    indicatorIndex === currentIndex
+                );
+
+            });
+
+        }
+
+
+        /* ===========================
+        Imagem inicial
+        =========================== */
+
+        updateBackground();
+
+
+        /* ===========================
+        Se tiver apenas uma imagem
+        =========================== */
+
+        if (images.length <= 1) {
+
+            previousButton.style.display = "none";
+
+            nextButton.style.display = "none";
+
+            indicators.style.display = "none";
+
+            return;
+
+        }
+
+
+        /* ===========================
+        Indicadores
+        =========================== */
+
+        images.forEach((_, imageIndex) => {
+
+            const indicator = document.createElement("span");
+
+            indicator.classList.add("carousel-indicator");
+
+
+            if (imageIndex === 0) {
+
+                indicator.classList.add("active");
+
+            }
+
+
+            indicator.addEventListener("click", () => {
+
+                currentIndex = imageIndex;
+
+                updateCarousel();
+
+            });
+
+
+            indicators.appendChild(indicator);
+
+        });
+
+
+        /* ===========================
+        Próxima imagem
+        =========================== */
+
+        nextButton.addEventListener("click", () => {
+
+            currentIndex++;
+
+            if (currentIndex >= images.length) {
+
+                currentIndex = 0;
+
+            }
 
             updateCarousel();
 
         });
 
-        indicators.appendChild(indicator);
 
-    });
+        /* ===========================
+        Imagem anterior
+        =========================== */
 
+        previousButton.addEventListener("click", () => {
 
-    /* ===========================
-       Atualizar imagem
-    =========================== */
+            currentIndex--;
 
-    function updateCarousel() {
+            if (currentIndex < 0) {
 
-        image.style.opacity = "0";
+                currentIndex = images.length - 1;
 
-        setTimeout(() => {
+            }
 
-            image.src = images[currentIndex];
-
-            image.style.opacity = "1";
-
-        }, 150);
-
-
-        const allIndicators =
-            indicators.querySelectorAll(".carousel-indicator");
-
-        allIndicators.forEach((indicator, indicatorIndex) => {
-
-            indicator.classList.toggle(
-                "active",
-                indicatorIndex === currentIndex
-            );
+            updateCarousel();
 
         });
 
-    }
 
+        /* ===========================
+        Troca automática
+        =========================== */
 
-    /* ===========================
-       Próxima imagem
-    =========================== */
-
-    nextButton.addEventListener("click", () => {
-
-        currentIndex++;
-
-        if (currentIndex >= images.length) {
-
-            currentIndex = 0;
-
-        }
-
-        updateCarousel();
-
-    });
-
-
-    /* ===========================
-       Imagem anterior
-    =========================== */
-
-    previousButton.addEventListener("click", () => {
-
-        currentIndex--;
-
-        if (currentIndex < 0) {
-
-            currentIndex = images.length - 1;
-
-        }
-
-        updateCarousel();
-
-    });
-
-
-    /* ===========================
-       Troca automática
-    =========================== */
-
-    let autoplay = setInterval(() => {
-
-        currentIndex++;
-
-        if (currentIndex >= images.length) {
-
-            currentIndex = 0;
-
-        }
-
-        updateCarousel();
-
-    }, 5000);
-
-
-    /* ===========================
-       Pausar ao passar o mouse
-    =========================== */
-
-    const carousel = card.querySelector(".carousel");
-
-    carousel.addEventListener("mouseenter", () => {
-
-        clearInterval(autoplay);
-
-    });
-
-
-    carousel.addEventListener("mouseleave", () => {
-
-        autoplay = setInterval(() => {
+        let autoplay = setInterval(() => {
 
             currentIndex++;
 
@@ -759,10 +765,324 @@ document.querySelectorAll(".project-card").forEach((card, index) => {
 
         }, 5000);
 
+
+        /* ===========================
+        Pausar ao passar o mouse
+        =========================== */
+
+        const carousel = card.querySelector(".carousel");
+
+
+        carousel.addEventListener("mouseenter", () => {
+
+            clearInterval(autoplay);
+
+        });
+
+
+        carousel.addEventListener("mouseleave", () => {
+
+            autoplay = setInterval(() => {
+
+                currentIndex++;
+
+                if (currentIndex >= images.length) {
+
+                    currentIndex = 0;
+
+                }
+
+                updateCarousel();
+
+            }, 5000);
+
+        });
+
     });
 
-});
+   /* ===========================
+    MODAL DAS IMAGENS
+    =========================== */
+
+    const imageModal =
+        document.querySelector(".image-modal");
+
+    const modalImage =
+        document.querySelector(".image-modal-img");
+
+    const modalClose =
+        document.querySelector(".image-modal-close");
+
+    const modalPrevious =
+        document.querySelector(".image-modal-prev");
+
+    const modalNext =
+        document.querySelector(".image-modal-next");
+
+    const modalIndicators =
+        document.querySelector(".image-modal-indicators");
+
+
+    let modalImages = [];
+    let modalCurrentIndex = 0;
+
+
+    /* ===========================
+    ATUALIZAR IMAGEM DO MODAL
+    =========================== */
+
+    function updateModalImage() {
+
+        modalImage.style.opacity = "0";
+
+        setTimeout(() => {
+
+            modalImage.src =
+                modalImages[modalCurrentIndex];
+
+            modalImage.style.opacity = "1";
+
+
+            /* Atualizar indicadores */
+
+            const indicators =
+                modalIndicators.querySelectorAll(
+                    ".image-modal-indicator"
+                );
+
+            indicators.forEach(
+                (indicator, index) => {
+
+                    indicator.classList.toggle(
+                        "active",
+                        index === modalCurrentIndex
+                    );
+
+                }
+            );
+
+        }, 150);
+
+    }
+    
+    /* ===========================
+    ABRIR MODAL
+    =========================== */
+
+    document.querySelectorAll(".project-card").forEach(
+
+        (card, projectIndex) => {
+
+            const project = projects[projectIndex];
+
+            const images =
+                project.gallery?.length
+                    ? project.gallery
+                    : [project.image];
+
+
+            const image =
+                card.querySelector(".carousel-image");
+
+
+            image.addEventListener("click", () => {
+
+                /*
+                Pega todas as imagens
+                do projeto atual
+                */
+
+                modalImages = images;
+
+
+                /*
+                Descobre qual imagem
+                está sendo exibida
+                atualmente
+                */
+
+                const currentImage =
+                    image.getAttribute("src");
+
+
+                modalCurrentIndex =
+                    modalImages.indexOf(currentImage);
+
+
+                /*
+                Caso não encontre
+                */
+
+                if (modalCurrentIndex === -1) {
+
+                    modalCurrentIndex = 0;
+
+                }
+
+
+                /*
+                Limpar indicadores antigos
+                */
+
+                modalIndicators.innerHTML = "";
+
+
+                /*
+                Criar indicadores
+                */
+
+                modalImages.forEach(
+                    (_, index) => {
+
+                        const indicator =
+                            document.createElement("span");
+
+
+                        indicator.classList.add(
+                            "image-modal-indicator"
+                        );
+
+
+                        if (
+                            index === modalCurrentIndex
+                        ) {
+
+                            indicator.classList.add(
+                                "active"
+                            );
+
+                        }
+
+
+                        indicator.addEventListener(
+                            "click",
+                            () => {
+
+                                modalCurrentIndex = index;
+
+                                updateModalImage();
+
+                            }
+                        );
+
+
+                        modalIndicators.appendChild(
+                            indicator
+                        );
+
+                    }
+                );
+
+
+                /*
+                Mostrar imagem
+                */
+
+                modalImage.src =
+                    modalImages[modalCurrentIndex];
+
+
+                /*
+                Mostrar modal
+                */
+
+                imageModal.classList.add(
+                    "active"
+                );
+
+            });
+
+        }
+
+    );
+
+
+    /* ===========================
+    PRÓXIMA IMAGEM
+    =========================== */
+
+    modalNext.addEventListener("click", () => {
+
+        modalCurrentIndex++;
+
+
+        if (
+            modalCurrentIndex >= modalImages.length
+        ) {
+
+            modalCurrentIndex = 0;
+
+        }
+
+
+        updateModalImage();
+
+    });
+
+
+    /* ===========================
+    IMAGEM ANTERIOR
+    =========================== */
+
+    modalPrevious.addEventListener("click", () => {
+
+        modalCurrentIndex--;
+
+
+        if (modalCurrentIndex < 0) {
+
+            modalCurrentIndex =
+                modalImages.length - 1;
+
+        }
+
+
+        updateModalImage();
+
+    });
+
+
+    /* ===========================
+    FECHAR
+    =========================== */
+
+    modalClose.addEventListener("click", () => {
+
+        imageModal.classList.remove("active");
+
+    });
+
+
+    /* ===========================
+    FECHAR CLICANDO FORA
+    =========================== */
+
+    imageModal.addEventListener("click", (event) => {
+
+        if (event.target === imageModal) {
+
+            imageModal.classList.remove("active");
+
+        }
+
+    });
+
+
+    /* ===========================
+    FECHAR COM ESC
+    =========================== */
+
+    document.addEventListener("keydown", (event) => {
+
+        if (event.key === "Escape") {
+
+            imageModal.classList.remove("active");
+
+        }
+
+    });
 
 }
+
 
 document.addEventListener("DOMContentLoaded", renderProjects);
