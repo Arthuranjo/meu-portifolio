@@ -18,7 +18,7 @@ const projects = [
 
         role: "Full Stack Developer",
 
-        image: "assets/img/projects/cosmica.png",
+        image: "assets/img/projects/charles/tela-incial-charles.png",
 
         description:
             "Sistema completo para gerenciamento de pedidos online, contendo autenticação de usuários, catálogo de pizzas, carrinho de compras, painel administrativo, histórico de pedidos e integração com banco de dados MySQL.",
@@ -51,15 +51,46 @@ const projects = [
             ]
         },
 
-        github: "https://github.com/Arthuranjo",
+        github: "https://github.com/ajudantedemagico/charlespizzascongeladas",
 
-        demo: "#",
+        demo: "https://arthuranjo.github.io/CharlesPizzaria-Demo/",
 
         gallery: [
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
+
+            {
+                type:"image",
+                src:"assets/img/projects/charles/tela-incial-charles.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/charles/login-charles.png"
+            },
+
+            {
+                type: "video",
+                src: "assets/video/charles-home.mp4",
+            },
+
+            {
+                type:"video",
+                src:"assets/video/charles-carrinho.mp4"
+            },
+
+            {
+                type:"video",
+                src:"assets/video/charles-pedido.mp4"
+            },
+
+            {
+                type:"video",
+                src:"assets/video/charles-cadastro.mp4"
+            },
+
+            {
+                type:"video",
+                src:"assets/video/charles-admin.mp4"
+            },
         ],
     },
 
@@ -119,18 +150,41 @@ const projects = [
             ]
         },
 
-        github: "https://github.com/Arthuranjo/system_pilates",
+        github: "https://github.com/Arthuranjo/Pilates",
 
         demo: "#",
 
         gallery: [
-          "assets/img/projects/pilates/tela-login.png",
-          "assets/img/projects/pilates/tela-aluno.png",
-          "assets/img/projects/pilates/tela-professor.png",
-          "assets/img/projects/pilates/tela-admin.png",
-          "assets/img/projects/pilates/cadastro-aluno.png",
-          "assets/img/projects/pilates/recuperar-senha.png" 
-        ]
+            {
+                type:"image",
+                src:"assets/img/projects/pilates/tela-login.png"
+            },
+            
+            {
+                type:"image",
+                src:"assets/img/projects/pilates/tela-aluno.png"
+            },
+  
+            {
+                type:"image",
+                src:"assets/img/projects/pilates/tela-professor.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/pilates/tela-admin.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/pilates/cadastro-aluno.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/pilates/recuperar-senha.png"
+            }, 
+        ],
     },
 
     {
@@ -152,7 +206,7 @@ const projects = [
 
         role: "Mobile Developer",
 
-        image: "assets/img/projects/cosmica.png",
+        image: "assets/img/projects/controle-gastos/tela-principal.jpeg",
 
         description:
             "Aplicativo mobile desenvolvido para gerenciamento de gastos pessoais, permitindo cadastrar, visualizar e excluir despesas, selecionar categorias e datas, além de acompanhar automaticamente o total de gastos.",
@@ -188,10 +242,31 @@ const projects = [
         demo: "#",
 
         gallery: [
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
+            {
+                type:"image",
+                src:"assets/img/projects/controle-gastos/tela-principal.jpeg"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/controle-gastos/cadastrar-gasto.jpeg"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/controle-gastos/gasto-criado.jpeg"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/controle-gastos/filtrar-gasto.jpeg"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/controle-gastos/excluir-gasto.jpeg"
+            },
+         
         ],
 
     },
@@ -251,13 +326,35 @@ const projects = [
 
         github: "https://github.com/Arthuranjo/sistema--monitoramento",
 
-        demo: "#",
+        demo: "https://arthuranjo.github.io/sistema--monitoramento/",
 
         gallery: [
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png",
-            "assets/img/projects/cosmica.png"
+
+            {
+                type:"image",
+                src:"assets/img/projects/iot/temperaturas-controladas.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/iot/temperatura-descontrolada.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/iot/apos-controlar-temp.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/iot/vibracao-descontrolada.png"
+            },
+
+            {
+                type:"image",
+                src:"assets/img/projects/iot/circuito-esp32.png"
+            },
+
         ],
 
     },
@@ -315,11 +412,7 @@ function renderProjects() {
                     <div class="carousel">
                         <div class="carousel-background"></div>
 
-                        <img
-                            class="carousel-image"
-                            src="${project.gallery?.[0] || project.image}"
-                            alt="${project.title}"
-                        >
+                        <div class="carousel-media"></div>
 
                         <button
                             class="carousel-button carousel-prev"
@@ -578,227 +671,463 @@ function renderProjects() {
     });
 
 
+
     /* ===========================
    Carrossel dos Projetos
 =========================== */
 
-    document.querySelectorAll(".project-card").forEach((card, index) => {
+document.querySelectorAll(".project-card").forEach((card, index) => {
 
-        const project = projects[index];
-
-        const images = project.gallery?.length
-            ? project.gallery
-            : [project.image];
-
-        const image = card.querySelector(".carousel-image");
-
-        const background = card.querySelector(".carousel-background");
-
-        const previousButton = card.querySelector(".carousel-prev");
-
-        const nextButton = card.querySelector(".carousel-next");
-
-        const indicators = card.querySelector(".carousel-indicators");
-
-        let currentIndex = 0;
+    const project = projects[index];
 
 
-        /* ===========================
-        Atualizar fundo desfocado
-        =========================== */
+    /* ===========================
+       Normalizar gallery antiga
+    =========================== */
 
-        function updateBackground() {
+    const media = project.gallery?.length
+        ? project.gallery.map(item => {
+
+            if (typeof item === "string") {
+
+                return {
+                    type: "image",
+                    src: item
+                };
+
+            }
+
+            return item;
+
+        })
+        : [
+            {
+                type: "image",
+                src: project.image
+            }
+        ];
+
+
+    const mediaContainer =
+        card.querySelector(".carousel-media");
+
+    const background =
+        card.querySelector(".carousel-background");
+
+    const previousButton =
+        card.querySelector(".carousel-prev");
+
+    const nextButton =
+        card.querySelector(".carousel-next");
+
+    const indicators =
+        card.querySelector(".carousel-indicators");
+
+    const carousel =
+        card.querySelector(".carousel");
+
+
+    let currentIndex = 0;
+
+    let autoplay = null;
+
+
+    /* ===========================
+       Atualizar fundo
+    =========================== */
+
+    function updateBackground() {
+
+        const currentMedia =
+            media[currentIndex];
+
+
+        if (currentMedia.type === "image") {
 
             background.style.setProperty(
                 "--carousel-image",
-                `url("${images[currentIndex]}")`
+                `url("${currentMedia.src}")`
+            );
+
+            background.style.display = "block";
+
+        } else {
+
+            background.style.removeProperty(
+                "--carousel-image"
+            );
+
+            background.style.display = "none";
+
+        }
+
+    }
+
+
+    /* ===========================
+       Renderizar mídia
+    =========================== */
+
+    function renderMedia() {
+
+        const currentMedia =
+            media[currentIndex];
+
+
+        /* Pausar vídeo anterior */
+
+        const previousVideo =
+            mediaContainer.querySelector("video");
+
+        if (previousVideo) {
+
+            previousVideo.pause();
+
+        }
+
+
+        mediaContainer.innerHTML = "";
+
+
+        if (currentMedia.type === "video") {
+
+            const video =
+                document.createElement("video");
+
+            video.classList.add("carousel-video");
+
+            video.src =
+                currentMedia.src;
+
+            video.controls = true;
+
+            video.preload = "metadata";
+
+            video.playsInline = true;
+
+            mediaContainer.appendChild(video);
+
+
+            /*
+            Pausar autoplay enquanto
+            o vídeo estiver sendo exibido
+            */
+
+            stopAutoplay();
+
+
+            /*
+            Quando o vídeo terminar,
+            ir para próxima mídia
+            */
+
+            video.addEventListener("ended", () => {
+
+                nextMedia();
+
+                startAutoplay();
+
+            });
+
+        } else {
+
+            const image =
+                document.createElement("img");
+
+            image.classList.add(
+                "carousel-image"
+            );
+
+            image.src =
+                currentMedia.src;
+
+            image.alt =
+                project.title;
+
+            image.loading = "lazy";
+
+
+            image.addEventListener(
+                "click",
+                () => {
+
+                    openModal();
+
+                }
+            );
+
+
+            mediaContainer.appendChild(
+                image
             );
 
         }
 
 
-        /* ===========================
-        Atualizar imagem
-        =========================== */
+        updateBackground();
 
-        function updateCarousel() {
+        updateIndicators();
 
-            image.style.opacity = "0";
-
-            setTimeout(() => {
-
-                image.src = images[currentIndex];
-
-                updateBackground();
-
-                image.style.opacity = "1";
-
-            }, 150);
+    }
 
 
-            /* Atualizar indicadores */
+    /* ===========================
+       Atualizar indicadores
+    =========================== */
 
-            const allIndicators =
-                indicators.querySelectorAll(".carousel-indicator");
+    function updateIndicators() {
 
-            allIndicators.forEach((indicator, indicatorIndex) => {
+        const allIndicators =
+            indicators.querySelectorAll(
+                ".carousel-indicator"
+            );
+
+        allIndicators.forEach(
+            (indicator, indicatorIndex) => {
 
                 indicator.classList.toggle(
                     "active",
                     indicatorIndex === currentIndex
                 );
 
-            });
+            }
+        );
+
+    }
+
+
+    /* ===========================
+       Próxima mídia
+    =========================== */
+
+    function nextMedia() {
+
+        currentIndex++;
+
+        if (currentIndex >= media.length) {
+
+            currentIndex = 0;
 
         }
 
+        renderMedia();
 
-        /* ===========================
-        Imagem inicial
-        =========================== */
-
-        updateBackground();
+    }
 
 
-        /* ===========================
-        Se tiver apenas uma imagem
-        =========================== */
+    /* ===========================
+       Mídia anterior
+    =========================== */
 
-        if (images.length <= 1) {
+    function previousMedia() {
 
-            previousButton.style.display = "none";
+        currentIndex--;
 
-            nextButton.style.display = "none";
+        if (currentIndex < 0) {
 
-            indicators.style.display = "none";
+            currentIndex =
+                media.length - 1;
+
+        }
+
+        renderMedia();
+
+    }
+
+
+    /* ===========================
+       Autoplay
+    =========================== */
+
+    function startAutoplay() {
+
+        stopAutoplay();
+
+
+        /*
+        Não iniciar autoplay
+        enquanto estiver em vídeo
+        */
+
+        if (
+            media[currentIndex].type ===
+            "video"
+        ) {
 
             return;
 
         }
 
 
-        /* ===========================
-        Indicadores
-        =========================== */
+        autoplay = setInterval(() => {
 
-        images.forEach((_, imageIndex) => {
+            /*
+            Se a próxima mídia
+            for vídeo, ela será exibida
+            e o autoplay será parado
+            */
 
-            const indicator = document.createElement("span");
+            nextMedia();
 
-            indicator.classList.add("carousel-indicator");
+            if (
+                media[currentIndex].type ===
+                "video"
+            ) {
 
-
-            if (imageIndex === 0) {
-
-                indicator.classList.add("active");
-
-            }
-
-
-            indicator.addEventListener("click", () => {
-
-                currentIndex = imageIndex;
-
-                updateCarousel();
-
-            });
-
-
-            indicators.appendChild(indicator);
-
-        });
-
-
-        /* ===========================
-        Próxima imagem
-        =========================== */
-
-        nextButton.addEventListener("click", () => {
-
-            currentIndex++;
-
-            if (currentIndex >= images.length) {
-
-                currentIndex = 0;
+                stopAutoplay();
 
             }
-
-            updateCarousel();
-
-        });
-
-
-        /* ===========================
-        Imagem anterior
-        =========================== */
-
-        previousButton.addEventListener("click", () => {
-
-            currentIndex--;
-
-            if (currentIndex < 0) {
-
-                currentIndex = images.length - 1;
-
-            }
-
-            updateCarousel();
-
-        });
-
-
-        /* ===========================
-        Troca automática
-        =========================== */
-
-        let autoplay = setInterval(() => {
-
-            currentIndex++;
-
-            if (currentIndex >= images.length) {
-
-                currentIndex = 0;
-
-            }
-
-            updateCarousel();
 
         }, 5000);
 
-
-        /* ===========================
-        Pausar ao passar o mouse
-        =========================== */
-
-        const carousel = card.querySelector(".carousel");
+    }
 
 
-        carousel.addEventListener("mouseenter", () => {
+    function stopAutoplay() {
+
+        if (autoplay) {
 
             clearInterval(autoplay);
 
-        });
+            autoplay = null;
+
+        }
+
+    }
 
 
-        carousel.addEventListener("mouseleave", () => {
+    /* ===========================
+       Apenas uma mídia
+    =========================== */
 
-            autoplay = setInterval(() => {
+    if (media.length <= 1) {
 
-                currentIndex++;
+        previousButton.style.display =
+            "none";
 
-                if (currentIndex >= images.length) {
+        nextButton.style.display =
+            "none";
 
-                    currentIndex = 0;
+        indicators.style.display =
+            "none";
+
+    } else {
+
+        /* Criar indicadores */
+
+        media.forEach(
+            (_, mediaIndex) => {
+
+                const indicator =
+                    document.createElement(
+                        "span"
+                    );
+
+                indicator.classList.add(
+                    "carousel-indicator"
+                );
+
+
+                if (mediaIndex === 0) {
+
+                    indicator.classList.add(
+                        "active"
+                    );
 
                 }
 
-                updateCarousel();
 
-            }, 5000);
+                indicator.addEventListener(
+                    "click",
+                    () => {
 
-        });
+                        currentIndex =
+                            mediaIndex;
 
-    });
+                        renderMedia();
+
+                        startAutoplay();
+
+                    }
+                );
+
+
+                indicators.appendChild(
+                    indicator
+                );
+
+            }
+        );
+
+
+        /* Botão próximo */
+
+        nextButton.addEventListener(
+            "click",
+            () => {
+
+                nextMedia();
+
+                startAutoplay();
+
+            }
+        );
+
+
+        /* Botão anterior */
+
+        previousButton.addEventListener(
+            "click",
+            () => {
+
+                previousMedia();
+
+                startAutoplay();
+
+            }
+        );
+
+    }
+
+
+    /* ===========================
+       Pausar no hover
+    =========================== */
+
+    carousel.addEventListener(
+        "mouseenter",
+        stopAutoplay
+    );
+
+
+    carousel.addEventListener(
+        "mouseleave",
+        () => {
+
+            if (
+                media[currentIndex].type ===
+                "image"
+            ) {
+
+                startAutoplay();
+
+            }
+
+        }
+    );
+
+
+    /* ===========================
+       Iniciar
+    =========================== */
+
+    renderMedia();
+
+    startAutoplay();
+
+});
+
+
 
    /* ===========================
     MODAL DAS IMAGENS
@@ -809,6 +1138,9 @@ function renderProjects() {
 
     const modalImage =
         document.querySelector(".image-modal-img");
+
+    const modalVideo =
+        document.querySelector(".image-modal-video");
 
     const modalClose =
         document.querySelector(".image-modal-close");
@@ -833,35 +1165,79 @@ function renderProjects() {
 
     function updateModalImage() {
 
-        modalImage.style.opacity = "0";
-
-        setTimeout(() => {
-
-            modalImage.src =
-                modalImages[modalCurrentIndex];
-
-            modalImage.style.opacity = "1";
+        const media =
+            modalImages[modalCurrentIndex];
 
 
-            /* Atualizar indicadores */
+        /*
+        Esconder os dois inicialmente
+        */
 
-            const indicators =
-                modalIndicators.querySelectorAll(
-                    ".image-modal-indicator"
-                );
+        modalImage.style.display = "none";
 
-            indicators.forEach(
-                (indicator, index) => {
+        modalVideo.style.display = "none";
 
-                    indicator.classList.toggle(
-                        "active",
-                        index === modalCurrentIndex
-                    );
 
-                }
+        /*
+        Parar vídeo anterior
+        */
+
+        modalVideo.pause();
+
+        modalVideo.removeAttribute("src");
+
+
+
+        /* ===========================
+        IMAGEM
+        =========================== */
+
+        if (media.type === "image") {
+
+            modalImage.src = media.src;
+
+            modalImage.alt = "Imagem do projeto";
+
+            modalImage.style.display = "block";
+
+        }
+
+
+        /* ===========================
+        VÍDEO
+        =========================== */
+
+        else if (media.type === "video") {
+
+            modalVideo.src = media.src;
+
+            modalVideo.style.display = "block";
+
+            modalVideo.load();
+
+        }
+
+
+        /*
+        Atualizar indicadores
+        */
+
+        const indicators =
+            modalIndicators.querySelectorAll(
+                ".image-modal-indicator"
             );
 
-        }, 150);
+
+        indicators.forEach(
+            (indicator, index) => {
+
+                indicator.classList.toggle(
+                    "active",
+                    index === modalCurrentIndex
+                );
+
+            }
+        );
 
     }
     
@@ -873,40 +1249,53 @@ function renderProjects() {
 
         (card, projectIndex) => {
 
-            const project = projects[projectIndex];
+            const project =
+                projects[projectIndex];
 
-            const images =
+
+            const media =
                 project.gallery?.length
                     ? project.gallery
-                    : [project.image];
+                    : [
+                        {
+                            type: "image",
+                            src: project.image
+                        }
+                    ];
 
 
-            const image =
-                card.querySelector(".carousel-image");
+            const carouselMedia =
+                card.querySelector(".carousel-media");
 
 
-            image.addEventListener("click", () => {
+            if (!carouselMedia) {
+
+                return;
+
+            }
+
+
+            carouselMedia.addEventListener("click", () => {
 
                 /*
-                Pega todas as imagens
-                do projeto atual
+                Guardar todas as mídias
                 */
 
-                modalImages = images;
+                modalImages = media;
 
 
                 /*
-                Descobre qual imagem
-                está sendo exibida
-                atualmente
+                Descobrir a mídia atual
                 */
 
-                const currentImage =
-                    image.getAttribute("src");
+                const currentSrc =
+                    carouselMedia.getAttribute("src");
 
 
                 modalCurrentIndex =
-                    modalImages.indexOf(currentImage);
+                    modalImages.findIndex(
+                        item => item.src === currentSrc
+                    );
 
 
                 /*
@@ -921,7 +1310,7 @@ function renderProjects() {
 
 
                 /*
-                Limpar indicadores antigos
+                Limpar indicadores
                 */
 
                 modalIndicators.innerHTML = "";
@@ -975,15 +1364,14 @@ function renderProjects() {
 
 
                 /*
-                Mostrar imagem
+                Mostrar mídia atual
                 */
 
-                modalImage.src =
-                    modalImages[modalCurrentIndex];
+                updateModalImage();
 
 
                 /*
-                Mostrar modal
+                Abrir modal
                 */
 
                 imageModal.classList.add(
@@ -995,8 +1383,6 @@ function renderProjects() {
         }
 
     );
-
-
     /* ===========================
     PRÓXIMA IMAGEM
     =========================== */
