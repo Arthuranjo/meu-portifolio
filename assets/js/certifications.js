@@ -67,7 +67,7 @@ const certifications = [
 
         icon: "fa-solid fa-cloud",
 
-        certificateUrl: "#"
+        certificateUrl: "./assets/img/certificates/FF4955F9.pdf"
     }
 
 ];
