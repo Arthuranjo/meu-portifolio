@@ -1,7 +1,7 @@
 # 🚀 Arthur Anjos — Portfólio
 
 <p align="center">
-  <img src="assets/img/profile/tela-inicio-portifolio.png" alt="Preview do Portfólio" width="850">
+  <img src="assets/img/profile/portifolio-inicio.png" alt="Preview do Portfólio" width="850">
 </p>
 
 <p align="center">
