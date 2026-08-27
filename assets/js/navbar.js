@@ -26,7 +26,7 @@ function renderNavbar() {
                 </li>
 
                 <li>
-                    <a href="#tecnologias">Tecnologias</a>
+                    <a href="#tecnologias">Skills</a>
                 </li>
 
                 <li>
@@ -60,15 +60,17 @@ function renderNavbar() {
                 </button>
 
 
-                <div
+                <button
                     class="hamburger"
+                    type="button"
+                    aria-expanded="false"
                     aria-label="Abrir menu">
 
                     <span></span>
                     <span></span>
                     <span></span>
 
-                </div>
+                </button>
 
             </div>
 
@@ -76,6 +78,62 @@ function renderNavbar() {
 
     `;
 
+    setupNavbar();
+   
+}
+
+
+function setupNavbar(){
+
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    if(!hamburger || !navMenu){
+        return;
+    }
+
+    hamburger.addEventListener("click", () => {
+
+        const isOpen = navMenu.classList.toggle("active");
+
+        hamburger.classList.toggle("active", isOpen);
+
+        hamburger.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+        hamburger.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Fechar menu"
+                : "Abrir menu"
+        );
+
+    });
+
+    navMenu.querySelectorAll("a").forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navMenu.classList.remove("active");
+            hamburger.classList.remove("active");
+
+            hamburger.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            hamburger.setAttribute(
+                "aria-label",
+                "Abrir menu"
+            );
+
+        });
+
+    });
+
 }
 
 document.addEventListener("DOMContentLoaded", renderNavbar);
+    

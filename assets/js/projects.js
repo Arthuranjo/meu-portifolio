@@ -69,27 +69,27 @@ const projects = [
 
             {
                 type: "video",
-                src: "assets/video/charles-home.mp4",
+                src: "assets/video/charles/charles-home.mp4",
             },
 
             {
                 type:"video",
-                src:"assets/video/charles-carrinho.mp4"
+                src:"assets/video/charles/charles-carrinho.mp4"
             },
 
             {
                 type:"video",
-                src:"assets/video/charles-pedido.mp4"
+                src:"assets/video/charles/charles-pedido.mp4"
             },
 
             {
                 type:"video",
-                src:"assets/video/charles-cadastro.mp4"
+                src:"assets/video/charles/charles-cadastro.mp4"
             },
 
             {
                 type:"video",
-                src:"assets/video/charles-admin.mp4"
+                src:"assets/video/charles/charles-admin.mp4"
             },
         ],
     },
@@ -356,6 +356,157 @@ const projects = [
             },
 
         ],
+
+    },
+
+
+    {
+        id: 5,
+
+        title: "Site Cósmica",
+
+        category: "Web Development",
+
+        status: "Concluído",
+
+        featured: true,
+
+        year: "2026",
+
+        duration: "Projeto Acadêmico",
+
+        team: "Projeto Acadêmico",
+
+        role: "Front-end Developer",
+
+        image: "assets/img/projects/cosmica/cosmica.png",
+
+        description:
+            "Website desenvolvido para apresentar a identidade e os conteúdos da Cósmica, utilizando uma interface moderna, responsiva e focada na experiência do usuário.",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "GitHub Pages"
+        ],
+
+        features: [
+            "Design Responsivo",
+            "Interface Moderna",
+            "Navegação entre Seções",
+            "Animações e Transições",
+            "Layout Adaptável"
+        ],
+
+        metrics: {
+            modules: 5,
+            technologies: 3,
+            users: [
+                "Visitante"
+            ]
+        },
+
+        github: "https://github.com/Arthuranjo/site-c-smica",
+
+        demo: "https://arthuranjo.github.io/site-c-smica/",
+
+        gallery: [
+            {
+                type: "video",
+                src: "assets/video/cosmica/tela-home-cosmica.mp4"
+            },
+
+            {
+                type: "video",
+                src: "assets/video/cosmica/tela-impacto-cosmica.mp4"
+            },
+
+            {
+                type: "video",
+                src: "assets/video/cosmica/tela-afeto-cosmica.mp4"
+            },
+
+            {
+                type: "video",
+                src: "assets/video/cosmica/tela-produtos-cosmica.mp4"
+            },
+
+            {
+                type: "video",
+                src: "assets/video/cosmica/tela-contato-cosmica.mp4"
+            }
+
+            
+        ]
+    },
+
+    {
+        id: 6,
+
+        title: "Portfólio Pessoal",
+
+        category: "Front-end",
+
+        status: "Concluído",
+
+        featured: true,
+
+        year: "2026",
+
+        duration: "Em evolução",
+
+        team: "Desenvolvimento Individual",
+
+        role: "Front-end Developer",
+
+        image: "assets/img/profile/tela-inicio-portifolio.png",
+
+        description:
+            "Portfólio pessoal desenvolvido para apresentar minha trajetória, tecnologias, projetos, experiências e certificações. O projeto utiliza JavaScript para renderização dinâmica de conteúdo, carrosséis de mídia, modais e animações, além de ser hospedado utilizando GitHub Pages.",
+
+        technologies: [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "GSAP",
+            "ScrollTrigger",
+            "GitHub Pages"
+        ],
+
+        features: [
+            "Renderização Dinâmica de Projetos",
+            "Carrossel de Imagens e Vídeos",
+            "Modal para Visualização de Mídias",
+            "Navbar Dinâmica",
+            "Animações com GSAP",
+            "Design Responsivo"
+        ],
+
+        metrics: {
+            modules: 8,
+
+            technologies: 6,
+
+            users: [
+                "Recrutadores",
+                "Desenvolvedores",
+                "Visitantes"
+            ]
+        },
+
+        github: "https://github.com/Arthuranjo/portfolio",
+
+        demo: "https://arthuranjo.github.io/portfolio/",
+
+        gallery: [
+
+            {
+                type: "image",
+                src: "assets/img/profile/tela-inicio-portifolio.png"
+            },
+
+        ]
 
     },
 
@@ -803,10 +954,20 @@ document.querySelectorAll(".project-card").forEach((card, index) => {
 
             video.preload = "metadata";
 
+            video.muted = true;
+
+            video.autoplay = true;
+
             video.playsInline = true;
 
             mediaContainer.appendChild(video);
 
+
+            video.play().catch(() =>{
+                console.log(
+                    "Autoplay do video foi bloqueado"
+                );
+            });
 
             /*
             Pausar autoplay enquanto
