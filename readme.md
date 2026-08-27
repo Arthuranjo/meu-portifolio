@@ -10,7 +10,7 @@
 
 <p align="center">
 
-  <a href="https://arthuranjo.github.io/portfolio/">
+  <a href="https://arthuranjo.github.io/meu-portifolio/">
     <img src="https://img.shields.io/badge/🌐%20Portfólio-Visitar-0A66C2?style=for-the-badge">
   </a>
 
